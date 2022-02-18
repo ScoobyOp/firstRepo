@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200&family=PT+Sans&family=Redressed&display=swap");
 
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+width: 9px;
+}
+::-webkit-scrollbar-thumb{
+  background-color:pink;
+  border-radius: 12px
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
