@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { FooterItems } from "../FooterItems";
-import {IoIosClose} from "react-icons/io"
 
 
 function Footer() {
-  const [height, setHeight] = useState("max-h-0")
   const [sectionId, setSectionId] = useState(false);
 
   const toggleSection = (index) =>{
@@ -16,6 +14,19 @@ function Footer() {
     }
 
   }
+  const styles = {
+    section: {
+      maxHeight: "0",
+      overflow:"hidden",
+      transition: "max-height 1.2s ease-in",
+     
+    },
+    expand:{
+      transition: "max-height 0.9s linear",
+      maxHeight:"500px"
+    }
+  };
+
   return (
     <div>
       <div className="bg-[#F5F5F7]  pt-3">
@@ -91,11 +102,6 @@ function Footer() {
                     <span
                       key={index}
                       onClick={() => {
-                        // if (height == "max-h-0") {
-                        //   setHeight("max-h-max");
-                        // } else {
-                        //   setHeight("max-h-0");
-                        // }
                         toggleSection(index);
                       }}
                       className="text-gray-500 text-lg cursor-pointer float-right"
@@ -104,6 +110,7 @@ function Footer() {
                     </span>
                   </div>
                 </div>
+                <div style={sectionId === index  ? styles.expand :styles.section}>
                 {sectionId === index ? (
                   <div>
                     {item.data.map((info) => {
@@ -117,6 +124,7 @@ function Footer() {
                     })}
                   </div>
                 ) : null}
+                </div>
               </div>
             );
           })}

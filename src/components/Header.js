@@ -49,6 +49,20 @@ function Header() {
       route: "/about",
     }
   ];
+
+  const styles = {
+    section: {
+      maxHeight: "0vh",
+      overflow:"hidden",
+      transition: "all 0.5s ease-in",
+     
+    },
+    expand:{
+      transition: "all 0.5s ease-out",
+      maxHeight:"100vh"
+    }
+  };
+  
   const [showMenu, setShowMenu] = useState("md:hidden");
   let pathName = window.location.pathname;
   return (
@@ -109,7 +123,8 @@ function Header() {
         </div>
         {/*Mobile Screen Nav Items*/}
         <div
-          className={`md:flex justify-start w-full h-screen flex-col xl:hidden lg:hidden 2xl:hidden ${showMenu}`}
+          className={`md:flex justify-start w-full h-screen flex-col xl:hidden lg:hidden 2xl:hidden`}
+          style={showMenu == "md:hidden" ? styles.section: styles.expand}
         >
           <div>
             {/* Mobile view search-bar */}
