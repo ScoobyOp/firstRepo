@@ -13,11 +13,11 @@ function Header() {
       route: "/",
     },
     {
-      title: "Mac",
-      route: "/about",
+      title: "Pubg",
+      route: "/pubg",
     },
     {
-      title: "iPad",
+      title: "Mac",
       route: "/about",
     },
     {
